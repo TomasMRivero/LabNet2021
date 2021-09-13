@@ -8,7 +8,7 @@ using tp2.Exceptions;
 
 namespace tp2.UI.Helpers
 {
-    class InputHelper
+    public class InputHelper
     {
         public static float ValidarFloat(string input)
         {
