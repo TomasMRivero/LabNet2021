@@ -57,9 +57,13 @@
       <Project>{6ecbace4-a947-447e-b528-f7e7f3738406}</Project>
       <Name>tp2.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\tp2.Logic\tp2.Logic.csproj">
+    <ProjectReference Include="..\tp2.exceptions\tp2.Exceptions.csproj">
+      <Project>{295e7e83-5c92-4aa5-a255-75be8b614868}</Project>
+      <Name>tp2.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\tp2.Logic\tp2.Logica.csproj">
       <Project>{f5091b85-5e5b-4392-977f-9032f27a6860}</Project>
-      <Name>tp2.Logic</Name>
+      <Name>tp2.Logica</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

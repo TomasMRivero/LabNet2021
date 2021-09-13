@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using tp2.Exceptions;
+
 namespace tp2.UI.Helpers
 {
     class InputHelper
@@ -11,12 +13,7 @@ namespace tp2.UI.Helpers
         public static float ValidarFloat(string input)
         {
             float num;
-            while (!float.TryParse(input, out num))
-            {
-                Console.WriteLine("Tenés que ingresar un número real: ");
-                input = Console.ReadLine();
-            }
-            return num;
+            return float.TryParse(input, out num) ? num : throw new WrongInputException();
         }
         public static int ValidarInt(string input)
         {

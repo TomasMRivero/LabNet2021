@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using tp2.Entities;
 using tp2.UI.Helpers;
+using tp2.Exceptions;
 
 namespace tp2.UI
 {
@@ -19,7 +20,11 @@ namespace tp2.UI
             }
             catch(Exception ex)
             {
-                Console.WriteLine($"Excepcion ej3: {ex.Message}");
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Fin del programa");
             }
         }
     }

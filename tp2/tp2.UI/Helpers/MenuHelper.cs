@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using tp2.UI.Extensions;
 using tp2.Entities;
+using tp2.Exceptions;
 
 namespace tp2.UI.Helpers
 {
@@ -39,6 +40,9 @@ namespace tp2.UI.Helpers
                 case 3:
                     Punto3();
                     return false;
+                case 4:
+                    Punto4();
+                    return false;
                 default:
                     Console.WriteLine("Ejercicio invalido");
                     return false;
@@ -58,7 +62,11 @@ namespace tp2.UI.Helpers
             {
                 Console.WriteLine($"Error: {ex.Message}");
             }
-            catch(Exception ex)
+            catch (WrongInputException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine($"Error inesperado: {ex.Message}");
                 throw ex;
@@ -83,6 +91,10 @@ namespace tp2.UI.Helpers
             {
                 Console.WriteLine($"Solo Chuck Norris divide por cero!");
             }
+            catch (WrongInputException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error inesperado: {ex.Message}");
@@ -97,6 +109,11 @@ namespace tp2.UI.Helpers
         {
             var logic = new Logic();
             logic.ArrojarExcepcion();
+        }
+        private static void Punto4()
+        {
+            var logic = new Logic();
+            logic.ArrojarExcepcionCustom();
         }
     }
 }
