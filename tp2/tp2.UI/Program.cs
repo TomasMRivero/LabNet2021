@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using tp2.Entities;
 using tp2.UI.Helpers;
 
 namespace tp2.UI
@@ -12,7 +13,14 @@ namespace tp2.UI
     {
         static void Main(string[] args)
         {
-            MenuHelper.MostrarMenu();
+            try
+            {
+                MenuHelper.MostrarMenu();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Excepcion ej3: {ex.Message}");
+            }
         }
     }
 }

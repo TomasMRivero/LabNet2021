@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using tp2.UI.Extensions;
+using tp2.Entities;
 
 namespace tp2.UI.Helpers
 {
@@ -34,6 +35,9 @@ namespace tp2.UI.Helpers
                     return false;
                 case 2:
                     Punto2();
+                    return false;
+                case 3:
+                    Punto3();
                     return false;
                 default:
                     Console.WriteLine("Ejercicio invalido");
@@ -88,6 +92,11 @@ namespace tp2.UI.Helpers
             {
                 Console.WriteLine("Operación finalizada");
             }
+        }
+        private static void Punto3()
+        {
+            var logic = new Logic();
+            logic.ArrojarExcepcion();
         }
     }
 }
