@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using tp2.UI.Extensions;
 using tp2.UI.Helpers;
 
 namespace tp2.UI

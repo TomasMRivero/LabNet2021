@@ -17,14 +17,7 @@ namespace tp2.UI.Helpers
             {
                 Console.WriteLine("Ingrese un número correspondiente a un ejercicio (0 para salir): ");
 
-                string input = Console.ReadLine();
-                int ej;
-
-                while (!int.TryParse(input, out ej))
-                {
-                    Console.WriteLine("Tenés que ingresar un número entero: ");
-                    input = Console.ReadLine();
-                }
+                int ej = InputHelper.ValidarInt(Console.ReadLine());
 
                 finalizar = MenuSwitch(ej);
             } while (!finalizar);
@@ -39,6 +32,9 @@ namespace tp2.UI.Helpers
                 case 1:
                     Punto1();
                     return false;
+                case 2:
+                    Punto2();
+                    return false;
                 default:
                     Console.WriteLine("Ejercicio invalido");
                     return false;
@@ -50,22 +46,40 @@ namespace tp2.UI.Helpers
             {
                 Console.WriteLine("Ingrese un número real para dividir por cero: ");
 
-                string input = Console.ReadLine();
-                float num;
+                float num = InputHelper.ValidarFloat(Console.ReadLine());
 
-                while (!float.TryParse(input, out num))
-                {
-                    Console.WriteLine("Tenés que ingresar un número real: ");
-                    input = Console.ReadLine();
-                }
-
-                num.DividirPorCero();
+                Console.WriteLine($"Numero dividido por cero: {num.Dividir()}");
             }
             catch(DivideByZeroException ex)
             {
                 Console.WriteLine($"Error: {ex.Message}");
             }
             catch(Exception ex)
+            {
+                Console.WriteLine($"Error inesperado: {ex.Message}");
+                throw ex;
+            }
+            finally
+            {
+                Console.WriteLine("Operación finalizada");
+            }
+        }
+        private static void Punto2()
+        {
+            try
+            {
+                Console.WriteLine("Ingrese el dividendo (numero real): ");
+                float dividendo = InputHelper.ValidarFloat(Console.ReadLine());
+                Console.WriteLine("Ingrese el divisor (numero real): ");
+                float divisor = InputHelper.ValidarFloat(Console.ReadLine());
+
+                Console.WriteLine($"{dividendo} / {divisor} = {dividendo.Dividir(divisor)}");
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine($"Solo Chuck Norris divide por cero!");
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine($"Error inesperado: {ex.Message}");
                 throw ex;

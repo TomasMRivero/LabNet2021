@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\FloatExtensions.cs" />
+    <Compile Include="Helpers\InputHelper.cs" />
     <Compile Include="Helpers\MenuHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

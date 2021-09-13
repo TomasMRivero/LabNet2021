@@ -8,10 +8,14 @@ namespace tp2.UI.Extensions
 {
     public static class FloatExtensions
     {
-        public static float DividirPorCero(this float dividendo)
+        public static float Dividir(this float dividendo)
         {
             int divisor = 0;
-            return divisor == 0? throw new DivideByZeroException() : dividendo / divisor;
+            return Dividir(dividendo, divisor);
+        }
+        public static float Dividir(this float dividendo, float divisor)
+        {
+            return divisor == 0 ? throw new DivideByZeroException() : dividendo / divisor;
         }
     }
 }
